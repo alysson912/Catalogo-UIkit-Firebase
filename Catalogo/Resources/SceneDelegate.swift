@@ -17,17 +17,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
-        let vc : ViewController = ViewController()
-        let nav = UINavigationController(rootViewController: vc)
-        let appearance = UINavigationBarAppearance() // config navBarColor
-        appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = .red
-        nav.navigationBar.standardAppearance = appearance
-        nav.navigationBar.scrollEdgeAppearance = nav.navigationBar.standardAppearance
+         let vc : SignInEmailVC = SignInEmailVC()
+         let nav = UINavigationController(rootViewController: vc)
         window.rootViewController = nav
         window.makeKeyAndVisible()
         self.window = window
-        
         
     }
 
