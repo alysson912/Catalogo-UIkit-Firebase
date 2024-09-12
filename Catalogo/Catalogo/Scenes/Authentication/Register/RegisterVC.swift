@@ -77,7 +77,7 @@ extension RegisterVC: RegisterScreenProtocol {
                 
                 
                 self.alert?.getAlert(titulo: "Parabens", mensagem: "Usuario cadastrada com sucesso", completion: {
-                    let VC = HomeVC()
+                    let VC = MainTabBarController()
                     let navVC = UINavigationController(rootViewController: VC)
                     navVC.modalPresentationStyle = .fullScreen
                     self.present(navVC, animated: true, completion: nil)

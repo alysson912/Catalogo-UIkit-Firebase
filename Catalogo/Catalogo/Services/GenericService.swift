@@ -14,7 +14,7 @@ enum Error: Swift.Error {
 }
 
     enum TypeFetch {
-        case mock
+      //  case mock
       //  case request
     }
 

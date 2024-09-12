@@ -34,19 +34,12 @@ class SignInEmailVC: UIViewController {
 }
 
 extension SignInEmailVC: UITextFieldDelegate {
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-         print("textFieldDidBeginEditing")
-     }
-     
-     
+         
      func textFieldDidEndEditing(_ textField: UITextField) {
-         print("textFieldDidEndEditing")
          self.screen?.validateTextFields()
      }
      
      func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-         print("textFieldShouldReturn")
          textField.resignFirstResponder()
          return true
      }
@@ -63,10 +56,10 @@ extension SignInEmailVC: SignInEmailViewProtocol {
                       if usuario == nil {
                           self.alert?.getAlert(titulo: "Atenção", mensagem: "Tivemos um problema inesperado, tente novamente mais tarde")
                       } else {
-                        //  let VC = MainTabBarController()
-                       //   let navVC = UINavigationController(rootViewController: VC)
-                    //      navVC.modalPresentationStyle = .fullScreen
-                   //       self.present(navVC, animated: true, completion: nil)
+                          let VC = MainTabBarController()
+                          let navVC = UINavigationController(rootViewController: VC)
+                          navVC.modalPresentationStyle = .fullScreen
+                          self.present(navVC, animated: true, completion: nil)
                       }
                   }
                   

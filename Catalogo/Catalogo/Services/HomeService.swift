@@ -8,12 +8,12 @@
 import UIKit
 
 protocol HomeServiceDelegate: GenericService {
-    func getHomeFromJson(completion: completion<HomeDataModel?>)
+    //func getHomeFromJson(completion: completion<HomeDataModel?>)
    // func getHome(completion: @escaping completion<NFTData?>)
 }
 
 class HomeService {
-    func getHomeFromJson(completion: @escaping (HomeDataModel?, Error?) -> Void){
+ /*   func getHomeFromJson(completion: @escaping (HomeDataModel?, Error?) -> Void){
         if let url = Bundle.main.url(forResource: "HomeData", withExtension: "json"){ // buscando o local do data
             
             do {
@@ -28,4 +28,6 @@ class HomeService {
             completion(nil, Error.fileNoFound(name: "HomeData"))
         }
     }
+  
+  */
 }

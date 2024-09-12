@@ -23,7 +23,7 @@ class RegisterScreen: UIView {
     lazy var backGroundView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .systemIndigo//UIColor(red: 26/255, green: 26/255, blue: 1/255, alpha: 1.0)
+        view.backgroundColor = .gray//UIColor(red: 26/255, green: 26/255, blue: 1/255, alpha: 1.0)
         return view
     }()
     
@@ -158,12 +158,12 @@ class RegisterScreen: UIView {
     private func addViews(){
        
         addSubview(backGroundView)
-        addSubview(backButton)
-        addSubview(imageAddUser)
-        addSubview(nameTextField)
-        addSubview(emailTextField)
-        addSubview(passwordTextField)
-        addSubview(registerButton)
+        backGroundView.addSubview(backButton)
+        backGroundView.addSubview(imageAddUser)
+        backGroundView.addSubview(nameTextField)
+        backGroundView.addSubview(emailTextField)
+        backGroundView.addSubview(passwordTextField)
+        backGroundView.addSubview(registerButton)
         
     }
     

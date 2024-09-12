@@ -6,24 +6,26 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 final class SignInEmaiViewModel {
+    private var login = SignInEmailView()
     
-    var email = ""
-    var password = ""
-    
-    func sigIn() async throws {
-        guard !email.isEmpty, !password.isEmpty else {
-            print("No email or password found.")
-            return
-        }
-            do {
-                let returnedUserData = try await AuthenticationManager.shared.createUser(email: email, password: password)
-                print("Success")
-                print(returnedUserData)
-            } catch {
-                print("Error: \(error)")
+    private var auth: Auth?
+    private var alert: Alert?
+
+    func signIn() {
+        auth?.signIn(withEmail: login.getEmail(), password: login.getPassword(), completion: { usuario, error in
+            if error != nil {
+                self.alert?.getAlert(titulo: "Atenção", mensagem: "Dados Incorretos,verifique e tente Novamente!!")
+            } else {
+                if usuario == nil {
+                    self.alert?.getAlert(titulo: "Atenção", mensagem: "Tivemos um problema inesperado, tente novamente mais tarde")
+                } 
             }
-        }
+            
+        })
     }
+    
+}
 
