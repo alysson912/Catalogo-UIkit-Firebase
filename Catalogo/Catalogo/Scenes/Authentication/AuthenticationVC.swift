@@ -7,12 +7,24 @@
 
 import UIKit
 
-class AuthenticationVC: UIViewController {
+protocol AuthenticationVCProtocol: AnyObject {
+    func authenticate()
+}
+
+class AuthenticationVC: UIViewController, AuthenticationVCProtocol {
+    func authenticate() {
+        print("Autenticando no AuthenticationVC")
+    }
+    
     var screen = AuthenticationView()
     
     override func loadView() {
-         screen = AuthenticationView()
+        screen = AuthenticationView()
         view = screen
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = true
     }
     
     override func viewDidLoad() {
@@ -25,7 +37,6 @@ class AuthenticationVC: UIViewController {
 
 extension AuthenticationVC: AuthenticationViewProtocol {
     func actionSignInWithEmailButton() {
-        print("teste")
         let vc = SignInEmailVC()
         navigationController?.pushViewController(vc, animated: true)
        

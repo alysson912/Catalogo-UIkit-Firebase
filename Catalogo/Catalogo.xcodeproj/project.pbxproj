@@ -34,7 +34,8 @@
 		4B2F71682C88FCE900F5F2E2 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2F71672C88FCE900F5F2E2 /* UIView + Extension.swift */; };
 		4B2F716B2C89029800F5F2E2 /* SignInEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2F716A2C89029800F5F2E2 /* SignInEmailVC.swift */; };
 		4B2F716D2C8902AB00F5F2E2 /* SignInEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2F716C2C8902AB00F5F2E2 /* SignInEmailView.swift */; };
-		4B2F716F2C8902C600F5F2E2 /* SignInEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2F716E2C8902C600F5F2E2 /* SignInEmailViewModel.swift */; };
+		4B713A362C9465130032DA81 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B713A352C9465130032DA81 /* RootView.swift */; };
+		4B713A382C9465270032DA81 /* RootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B713A372C9465270032DA81 /* RootVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,7 +62,8 @@
 		4B2F71672C88FCE900F5F2E2 /* UIView + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		4B2F716A2C89029800F5F2E2 /* SignInEmailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailVC.swift; sourceTree = "<group>"; };
 		4B2F716C2C8902AB00F5F2E2 /* SignInEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailView.swift; sourceTree = "<group>"; };
-		4B2F716E2C8902C600F5F2E2 /* SignInEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailViewModel.swift; sourceTree = "<group>"; };
+		4B713A352C9465130032DA81 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		4B713A372C9465270032DA81 /* RootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 		4B0F97652C92354D0053005B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				4B713A342C9465000032DA81 /* RootView */,
 				4B2F71432C88F7D400F5F2E2 /* Authentication */,
 				4B0F97672C9236640053005B /* TabBar */,
 				4B0F976D2C9236E90053005B /* Home */,
@@ -233,11 +236,19 @@
 		4B2F71692C89026500F5F2E2 /* signInWIthEmail */ = {
 			isa = PBXGroup;
 			children = (
-				4B2F716E2C8902C600F5F2E2 /* SignInEmailViewModel.swift */,
 				4B2F716A2C89029800F5F2E2 /* SignInEmailVC.swift */,
 				4B2F716C2C8902AB00F5F2E2 /* SignInEmailView.swift */,
 			);
 			path = signInWIthEmail;
+			sourceTree = "<group>";
+		};
+		4B713A342C9465000032DA81 /* RootView */ = {
+			isa = PBXGroup;
+			children = (
+				4B713A352C9465130032DA81 /* RootView.swift */,
+				4B713A372C9465270032DA81 /* RootVC.swift */,
+			);
+			path = RootView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,13 +339,14 @@
 				4B2F71452C88F80700F5F2E2 /* AuthenticationView.swift in Sources */,
 				4B0F97722C9237000053005B /* HomeScreen.swift in Sources */,
 				4B0F97732C9237000053005B /* HomeVC.swift in Sources */,
+				4B713A362C9465130032DA81 /* RootView.swift in Sources */,
 				4B0F97632C92345F0053005B /* Alert.swift in Sources */,
 				4B2F71212C88C41D00F5F2E2 /* SceneDelegate.swift in Sources */,
 				4B2F716B2C89029800F5F2E2 /* SignInEmailVC.swift in Sources */,
 				4B2F71472C88F82200F5F2E2 /* AuthenticationVC.swift in Sources */,
 				4B0F977A2C9238710053005B /* RegisterVC.swift in Sources */,
+				4B713A382C9465270032DA81 /* RootVC.swift in Sources */,
 				4B2F71622C88FB9600F5F2E2 /* UIFont+Extension.swift in Sources */,
-				4B2F716F2C8902C600F5F2E2 /* SignInEmailViewModel.swift in Sources */,
 				4B0F97792C9238710053005B /* RegisterScreen.swift in Sources */,
 				4B0F975E2C9231570053005B /* HomeService.swift in Sources */,
 				4B0F97602C92317A0053005B /* GenericService.swift in Sources */,

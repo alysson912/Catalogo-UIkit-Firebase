@@ -19,11 +19,14 @@ class AuthenticationView: UIView {
         self.delegate = delegate
     }
     
-    lazy var viewBackGround: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor(red: 26/255, green: 26/255, blue: 1/255, alpha: 1.0)
-        return view
+    
+    lazy var viewBackGround : UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.isUserInteractionEnabled = true // Permitir interações
+        image.image = UIImage( named: "gsl" )
+        image.contentMode = .scaleToFill
+        return image
     }()
     
     lazy var titleLabel: UILabel = {
@@ -38,6 +41,7 @@ class AuthenticationView: UIView {
     lazy var signInWithEmailButton: UIButton = {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.isEnabled = true
         btn.backgroundColor = .orange
         btn.setTitle("Entrar", for: .normal)
         btn.clipsToBounds = true

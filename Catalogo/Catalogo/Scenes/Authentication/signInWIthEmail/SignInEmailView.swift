@@ -20,11 +20,13 @@ class SignInEmailView: UIView {
         self.delegate = delegate
     }
     
-    lazy var viewBackGround: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor(red: 23/255, green: 242/255, blue: 90/255, alpha: 1.0)
-        return view
+    lazy var viewBackGround : UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.isUserInteractionEnabled = true // Permitir interações
+        image.image = UIImage( named: "signInBackground" )
+        image.contentMode = .scaleToFill
+        return image
     }()
     
     lazy var signInWithEmailTitleLabel: UILabel = {
@@ -160,7 +162,7 @@ class SignInEmailView: UIView {
         viewBackGround.pin(to: self)
         NSLayoutConstraint.activate([
             
-            signInWithEmailTitleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10),
+            signInWithEmailTitleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 65),
             signInWithEmailTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             signInWithEmailTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             

@@ -9,19 +9,20 @@ import UIKit
 import FirebaseAuth
 
 class SignInEmailVC: UIViewController {
-    private var screen: SignInEmailView?
+    
+    
+     var screen: SignInEmailView?
     private var auth: Auth?
     private var alert: Alert?
-    private var viewModel = SignInEmaiViewModel()
     
     override func loadView() {
        screen = SignInEmailView()
         view = screen
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.isNavigationBarHidden = true
-       }
+//    override func viewWillAppear(_ animated: Bool) {
+//        navigationController?.isNavigationBarHidden = true
+//       }
     
     override func viewDidLoad() {
         super.viewDidLoad()
