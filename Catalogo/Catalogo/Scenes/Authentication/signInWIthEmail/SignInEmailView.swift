@@ -20,7 +20,9 @@ class SignInEmailView: UIView {
         self.delegate = delegate
     }
     
-    lazy var viewBackGround : UIImageView = {
+   
+    
+    private lazy var viewBackGround : UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.isUserInteractionEnabled = true // Permitir interações
@@ -29,7 +31,7 @@ class SignInEmailView: UIView {
         return image
     }()
     
-    lazy var signInWithEmailTitleLabel: UILabel = {
+    private lazy var signInWithEmailTitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Sign In With Email!"
@@ -38,7 +40,7 @@ class SignInEmailView: UIView {
         return label
     }()
     
-    lazy var emailTextField: UITextField = {
+    private lazy var emailTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.autocorrectionType = .no
@@ -52,11 +54,11 @@ class SignInEmailView: UIView {
         tf.layer.borderWidth = 1.0
         tf.layer.borderColor = UIColor.white.cgColor
         
-        // tf.text = "almenezes912@gmail.com"
+        tf.text = "al123@gmail.com"
         return tf
     }()
     
-    lazy var passwordTextField: UITextField = {
+    private lazy var passwordTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.autocorrectionType = .no
@@ -70,11 +72,11 @@ class SignInEmailView: UIView {
         tf.layer.borderWidth = 1.0
         tf.layer.borderColor = UIColor.white.cgColor
         
-        // tf.text = "almenezes912@gmail.com"
+         tf.text = "teste912@"
         return tf
     }()
     
-    lazy var signInButton : UIButton = {
+    private  lazy var signInButton : UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("entrar", for: .normal)
@@ -97,6 +99,7 @@ class SignInEmailView: UIView {
         register.setTitle("cadastre-se", for: .normal)
         register.titleLabel?.font = UIFont.systemFont(ofSize: 18)
         register.setTitleColor(.darkGray, for: .normal)
+        register.backgroundColor = .clear
         register.addTarget(self, action: #selector(tappedRegisterButton) , for: .touchUpInside)
         return register
     }()
@@ -145,6 +148,7 @@ class SignInEmailView: UIView {
         viewBackGround.addSubview(emailTextField)
         viewBackGround.addSubview(passwordTextField)
         viewBackGround.addSubview(signInButton)
+        viewBackGround.addSubview(registerButton)
     }
     
     override init(frame: CGRect) {
@@ -180,7 +184,12 @@ class SignInEmailView: UIView {
             signInButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 10),
             signInButton.leadingAnchor.constraint(equalTo: passwordTextField.leadingAnchor),
             signInButton.trailingAnchor.constraint(equalTo: passwordTextField.trailingAnchor),
-            signInButton.heightAnchor.constraint(equalToConstant: 65)
+            signInButton.heightAnchor.constraint(equalToConstant: 65),
+            
+            registerButton.topAnchor.constraint(equalTo: signInButton.bottomAnchor, constant: 10),
+            registerButton.leadingAnchor.constraint(equalTo: signInButton.leadingAnchor),
+            registerButton.trailingAnchor.constraint(equalTo: signInButton.trailingAnchor),
+            registerButton.heightAnchor.constraint(equalToConstant: 25)
         ])
     }
     

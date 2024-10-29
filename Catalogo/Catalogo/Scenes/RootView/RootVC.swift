@@ -42,7 +42,7 @@ class RootVC: UIViewController {
 
 extension RootVC: RootViewProtocol {
     func showSignInView() -> UIViewController {
-        let switchVC = false
+        let switchVC = true
         if switchVC {
             return AuthenticationVC()
         } else {

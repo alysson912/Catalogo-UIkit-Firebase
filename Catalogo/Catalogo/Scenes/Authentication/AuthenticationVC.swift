@@ -8,11 +8,11 @@
 import UIKit
 
 protocol AuthenticationVCProtocol: AnyObject {
-    func authenticate()
+    func authentication()
 }
 
 class AuthenticationVC: UIViewController, AuthenticationVCProtocol {
-    func authenticate() {
+    func authentication() {
         print("Autenticando no AuthenticationVC")
     }
     
@@ -33,6 +33,7 @@ class AuthenticationVC: UIViewController, AuthenticationVCProtocol {
         
     }
     
+
 }
 
 extension AuthenticationVC: AuthenticationViewProtocol {

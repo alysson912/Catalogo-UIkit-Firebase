@@ -36,6 +36,8 @@
 		4B2F716D2C8902AB00F5F2E2 /* SignInEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2F716C2C8902AB00F5F2E2 /* SignInEmailView.swift */; };
 		4B713A362C9465130032DA81 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B713A352C9465130032DA81 /* RootView.swift */; };
 		4B713A382C9465270032DA81 /* RootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B713A372C9465270032DA81 /* RootVC.swift */; };
+		4B924D4E2CB852F0003F26D5 /* SignInEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B924D4D2CB852F0003F26D5 /* SignInEmailViewModel.swift */; };
+		4BBA27E22CC96B800017F7EF /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBA27E12CC96B800017F7EF /* AuthenticationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,8 @@
 		4B2F716C2C8902AB00F5F2E2 /* SignInEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailView.swift; sourceTree = "<group>"; };
 		4B713A352C9465130032DA81 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		4B713A372C9465270032DA81 /* RootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootVC.swift; sourceTree = "<group>"; };
+		4B924D4D2CB852F0003F26D5 /* SignInEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailViewModel.swift; sourceTree = "<group>"; };
+		4BBA27E12CC96B800017F7EF /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +209,7 @@
 		4B2F71432C88F7D400F5F2E2 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				4BBA27E12CC96B800017F7EF /* AuthenticationManager.swift */,
 				4B2F71442C88F80700F5F2E2 /* AuthenticationView.swift */,
 				4B2F71462C88F82200F5F2E2 /* AuthenticationVC.swift */,
 				4B2F71692C89026500F5F2E2 /* signInWIthEmail */,
@@ -236,6 +241,7 @@
 		4B2F71692C89026500F5F2E2 /* signInWIthEmail */ = {
 			isa = PBXGroup;
 			children = (
+				4B924D4D2CB852F0003F26D5 /* SignInEmailViewModel.swift */,
 				4B2F716A2C89029800F5F2E2 /* SignInEmailVC.swift */,
 				4B2F716C2C8902AB00F5F2E2 /* SignInEmailView.swift */,
 			);
@@ -346,10 +352,12 @@
 				4B2F71472C88F82200F5F2E2 /* AuthenticationVC.swift in Sources */,
 				4B0F977A2C9238710053005B /* RegisterVC.swift in Sources */,
 				4B713A382C9465270032DA81 /* RootVC.swift in Sources */,
+				4BBA27E22CC96B800017F7EF /* AuthenticationManager.swift in Sources */,
 				4B2F71622C88FB9600F5F2E2 /* UIFont+Extension.swift in Sources */,
 				4B0F97792C9238710053005B /* RegisterScreen.swift in Sources */,
 				4B0F975E2C9231570053005B /* HomeService.swift in Sources */,
 				4B0F97602C92317A0053005B /* GenericService.swift in Sources */,
+				4B924D4E2CB852F0003F26D5 /* SignInEmailViewModel.swift in Sources */,
 				4B2F71612C88FB9600F5F2E2 /* UIColor+Extension.swift in Sources */,
 				4B2F71682C88FCE900F5F2E2 /* UIView + Extension.swift in Sources */,
 				4B2F716D2C8902AB00F5F2E2 /* SignInEmailView.swift in Sources */,
