@@ -8,6 +8,10 @@
 import UIKit
 import FirebaseAuth
 
+protocol SignInEmailVCProtocol: AnyObject {
+    func didReceiveFormData(email: String, senha: String)
+}
+
 class SignInEmailVC: UIViewController {
     
     private var viewModel = SignInEmailViewModel()
@@ -16,6 +20,12 @@ class SignInEmailVC: UIViewController {
     private var screen: SignInEmailView?
     private var auth: Auth?
     private var alert: Alert?
+    
+    private weak var delegade: SignInEmailVCProtocol?
+    
+    public func delegade(delegade: SignInEmailVCProtocol?) {
+        self.delegade = delegade
+    }
     
     override func loadView() {
         screen = SignInEmailView()
@@ -30,7 +40,6 @@ class SignInEmailVC: UIViewController {
         super.viewDidLoad()
         screen?.delegate(delegate: self)
         screen?.configTextFieldDelegate(delegate: self)
-        viewModel.delegade(delegate: self)
         hideKeyboardWhenTappedAround()
         auth = Auth.auth()
     }
@@ -40,7 +49,7 @@ class SignInEmailVC: UIViewController {
 extension SignInEmailVC: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        //  self.screen?.validateTextFields()
+        self.screen?.validateTextFields()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -51,45 +60,19 @@ extension SignInEmailVC: UITextFieldDelegate {
 
 extension SignInEmailVC: SignInEmailViewProtocol {
     func actionSignInButton()  {
-        //        guard let login = screen else { return }
-        //
-        //        auth?.signIn(withEmail: login.getEmail(), password: login.getPassword(), completion: { usuario, error in
-        //            if error != nil {
-        //                self.alert?.getAlert(titulo: "Atenção", mensagem: "Dados Incorretos,verifique e tente Novamente!!")
-        //            } else {
-        //                if usuario == nil {
-        //                    self.alert?.getAlert(titulo: "Atenção", mensagem: "Tivemos um problema inesperado, tente novamente mais tarde")
-        //                } else {
-        //                    viewModel.sigIn()
-        //                  //  let VC = MainTabBarController()
-        //                 //   let navVC = UINavigationController(rootViewController: VC)
-        //                 //   navVC.modalPresentationStyle = .fullScreen
-        //                 //   self.present(navVC, animated: true, completion: nil)
-        //                }
-        //            }
-        //
-        //        })
         // buscando os dados processados na viewModel
-        didTapLogin()
-            }
+        viewModel.didReceiveFormData(email: screen?.getEmail() ?? "", senha: screen?.getPassword() ?? "")
+    }
     
     func actionRegisterButton() {
         func actionRegisterButton() {
-        
+            
         }
     }
     
     
 }
-// recebendo os dados da view, e levando para viewModel
-extension SignInEmailVC: SignInEmailViewModelProtocol {
-    func didTapLogin() {
-        let email = screen?.getEmail() ?? ""
-        let password = screen?.getPassword() ?? ""
-        
-        viewModel.sigIn(email: email, password: password)
-    }
-}
+
 
 
 

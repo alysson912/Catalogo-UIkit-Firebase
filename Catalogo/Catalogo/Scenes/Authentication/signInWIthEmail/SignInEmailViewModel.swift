@@ -8,19 +8,21 @@
 import Foundation
 import FirebaseAuth
 
-protocol SignInEmailViewModelProtocol: AnyObject {
-    func didTapLogin()
-}
-
-class SignInEmailViewModel {
+class SignInEmailViewModel: SignInEmailVCProtocol{
     
     private var authenticationManager = AuthenticationManager()
-    private weak var delegade: SignInEmailViewModelProtocol?
     
-    public func delegade(delegate: SignInEmailViewModelProtocol?) {
-        self.delegade = delegate
+    // armazenando dados recebidos pelo protocolo
+    private var email: String?
+    private var senha: String?
+    
+    //passando dados recebidos e armazenados nas variaveis para a funcao sigIn()
+    func didReceiveFormData(email: String, senha: String) {
+        self.email = email
+        self.senha = senha
+        sigIn(email: email, password: senha)
     }
-     
+    
     func sigIn(email: String, password: String) {
         guard !email.isEmpty, !password.isEmpty else {
             print("No email or password found.")
