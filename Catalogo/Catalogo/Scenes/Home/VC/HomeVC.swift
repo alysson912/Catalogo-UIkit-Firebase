@@ -9,7 +9,12 @@
 
 import UIKit
 
-class HomeVC: UIViewController {
+@MainActor
+final class MenuViewModel {
+    
+}
+
+ class HomeVC: UIViewController {
     
     private var screen: HomeScreen?
     

@@ -14,13 +14,13 @@ class SignInEmailViewModel: SignInEmailVCProtocol{
     
     // armazenando dados recebidos pelo protocolo
     private var email: String?
-    private var senha: String?
+    private var password: String?
     
     //passando dados recebidos e armazenados nas variaveis para a funcao sigIn()
-    func didReceiveFormData(email: String, senha: String) {
+    func didReceiveFormData(email: String, password: String) {
         self.email = email
-        self.senha = senha
-        sigIn(email: email, password: senha)
+        self.password = password
+        sigIn(email: email, password: password)
     }
     
     func sigIn(email: String, password: String) {

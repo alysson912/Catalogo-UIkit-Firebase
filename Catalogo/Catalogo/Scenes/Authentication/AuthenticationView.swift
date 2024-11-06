@@ -18,8 +18,7 @@ class AuthenticationView: UIView {
     public func delegate(delegate: AuthenticationViewProtocol?) {
         self.delegate = delegate
     }
-    
-    
+        
     lazy var viewBackGround : UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false

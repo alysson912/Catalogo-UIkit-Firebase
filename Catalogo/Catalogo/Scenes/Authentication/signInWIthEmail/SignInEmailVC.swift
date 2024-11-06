@@ -9,7 +9,7 @@ import UIKit
 import FirebaseAuth
 
 protocol SignInEmailVCProtocol: AnyObject {
-    func didReceiveFormData(email: String, senha: String)
+    func didReceiveFormData(email: String, password: String)
 }
 
 class SignInEmailVC: UIViewController {
@@ -61,7 +61,10 @@ extension SignInEmailVC: UITextFieldDelegate {
 extension SignInEmailVC: SignInEmailViewProtocol {
     func actionSignInButton()  {
         // buscando os dados processados na viewModel
-        viewModel.didReceiveFormData(email: screen?.getEmail() ?? "", senha: screen?.getPassword() ?? "")
+        viewModel.didReceiveFormData(email: screen?.getEmail() ?? "", password: screen?.getPassword() ?? "")
+        let vc = SettingsVC()
+        navigationController?.pushViewController(vc, animated: true)
+       
     }
     
     func actionRegisterButton() {
@@ -72,7 +75,3 @@ extension SignInEmailVC: SignInEmailViewProtocol {
     
     
 }
-
-
-
-

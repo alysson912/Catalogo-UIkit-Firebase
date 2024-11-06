@@ -9,6 +9,9 @@ import UIKit
 
 class RootVC: UIViewController {
     var screen: RootView?
+   // var switchVC: AuthDataResultModel = true
+    
+    let authenticationManager = AuthenticationManager()
     
     override func loadView() {
         screen = RootView()
@@ -42,9 +45,14 @@ class RootVC: UIViewController {
 
 extension RootVC: RootViewProtocol {
     func showSignInView() -> UIViewController {
-        let switchVC = true
-        if switchVC {
-            return AuthenticationVC()
+        
+        let authUser = try? authenticationManager.getAuthenticateUser()
+        // se user autenticado for nil entao retorne verdadeiro, caso o contrario retorne falso
+       // switchVC = authUser == nil ? true : false
+        
+        if (authUser != nil) {
+            
+            return SettingsVC()
         } else {
             return SignInEmailVC()
         }

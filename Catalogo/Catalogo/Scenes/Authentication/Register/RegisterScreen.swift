@@ -71,8 +71,6 @@ class RegisterScreen: UIView {
         return email
     }()
     
-
-    
     lazy var passwordTextField : UITextField = {
         let password = UITextField()
         password.translatesAutoresizingMaskIntoConstraints = false
@@ -99,8 +97,7 @@ class RegisterScreen: UIView {
         
         return button
     }()
-    
-    
+        
     public func configTextFieldDelegate( delegate:UITextFieldDelegate ){
         nameTextField.delegate = delegate
         emailTextField.delegate = delegate
@@ -148,15 +145,12 @@ class RegisterScreen: UIView {
     public func getPassword() -> String{
         return self.passwordTextField.text ?? ""
     }
-    
-    
+        
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     private func addViews(){
-       
         addSubview(backGroundView)
         backGroundView.addSubview(backButton)
         backGroundView.addSubview(imageAddUser)
@@ -164,7 +158,6 @@ class RegisterScreen: UIView {
         backGroundView.addSubview(emailTextField)
         backGroundView.addSubview(passwordTextField)
         backGroundView.addSubview(registerButton)
-        
     }
     
     override init( frame : CGRect){
@@ -172,7 +165,6 @@ class RegisterScreen: UIView {
         addViews()
         setupConstraints()
         configButtonEnable(false)
-        
     }
   
     private func setupConstraints(){

@@ -20,8 +20,6 @@ class SignInEmailView: UIView {
         self.delegate = delegate
     }
     
-   
-    
     private lazy var viewBackGround : UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
