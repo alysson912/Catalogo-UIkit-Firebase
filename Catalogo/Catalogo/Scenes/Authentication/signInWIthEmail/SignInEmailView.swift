@@ -7,13 +7,14 @@
 
 import UIKit
 
+
 protocol SignInEmailViewProtocol: AnyObject {
     func actionSignInButton()
     func actionRegisterButton()
 }
 
 class SignInEmailView: UIView {
-    
+
     private weak var delegate: SignInEmailViewProtocol?
     
     public func delegate(delegate: SignInEmailViewProtocol?) {
@@ -74,12 +75,12 @@ class SignInEmailView: UIView {
         return tf
     }()
     
-    private  lazy var signInButton : UIButton = {
+    lazy var signInButton : UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("entrar", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
-        button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(.darkGray, for: .normal)
         button.clipsToBounds = true
         button.layer.cornerRadius = 7.5
         button.backgroundColor = UIColor( red: 102/255, green: 103/255, blue: 171/255, alpha: 1.0)
@@ -126,17 +127,6 @@ class SignInEmailView: UIView {
         }else {
             self.signInButton.setTitleColor(.lightGray, for: .normal)
             self.signInButton.isEnabled = false
-        }
-    }
-    
-    public func validateTextFields(){
-        let email: String = self.emailTextField.text ?? ""
-        let password: String = self.passwordTextField.text ?? ""
-        
-        if !email.isEmpty && !password.isEmpty{
-            self.configButtonEnable(true)
-        }else{
-            self.configButtonEnable(false)
         }
     }
     

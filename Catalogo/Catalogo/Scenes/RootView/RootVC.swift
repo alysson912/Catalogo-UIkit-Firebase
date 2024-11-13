@@ -7,10 +7,13 @@
 
 import UIKit
 
+protocol AuthenticationCompletionDelegate: AnyObject {
+    func didCompleteAuthentication()
+}
+
+
 class RootVC: UIViewController {
     var screen: RootView?
-   // var switchVC: AuthDataResultModel = true
-    
     let authenticationManager = AuthenticationManager()
     
     override func loadView() {
@@ -20,9 +23,10 @@ class RootVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.isNavigationBarHidden = true
-    }
-    
+           navigationController?.isNavigationBarHidden = true
+        
+       }
+
     // Função para adicionar o view controller retornado por showSignInView()
       private func showChildViewController() {
           let viewController = screen?.delegate?.showSignInView()
@@ -38,29 +42,22 @@ class RootVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //var authViewController = screen?.switchAuthenticationView
         showChildViewController()
-    }      
+    }
 }
 
 extension RootVC: RootViewProtocol {
     func showSignInView() -> UIViewController {
-        
         let authUser = try? authenticationManager.getAuthenticateUser()
-        // se user autenticado for nil entao retorne verdadeiro, caso o contrario retorne falso
-       // switchVC = authUser == nil ? true : false
         
-        if (authUser != nil) {
-            
-            return SettingsVC()
+        if authUser == nil {
+            let signInVC = SignInEmailVC()
+            return signInVC
         } else {
-            return SignInEmailVC()
+            return MainTabBarController()
         }
     }
 }
-
-
-
 
 
 

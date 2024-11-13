@@ -14,6 +14,7 @@ protocol RootViewProtocol: AnyObject {
 class RootView: UIView {
     
     weak var delegate: RootViewProtocol?
+    
     public func delegade(delegate: RootViewProtocol?) {
         self.delegate = delegate
     }

@@ -26,6 +26,15 @@ class SettingsScreen: UIView {
         return view
     }()
     
+    lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Settings"
+        label.textColor = .black
+        label.font = UIFont.systemFont(ofSize: 40, weight: .bold)
+        return label
+    }()
+    
     lazy var logOutButton: UIButton = {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
@@ -45,6 +54,7 @@ class SettingsScreen: UIView {
     
     private func addViews(){
         addSubview(viewBackGround)
+        viewBackGround.addSubview(titleLabel)
         viewBackGround.addSubview(logOutButton)
     }
     
@@ -62,9 +72,13 @@ class SettingsScreen: UIView {
         viewBackGround.pin(to: self)
         NSLayoutConstraint.activate( [
        
-            logOutButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 25),
-            logOutButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
-            logOutButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
+            titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
+            
+            logOutButton.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
+            logOutButton.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
+            logOutButton.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
             logOutButton.heightAnchor.constraint(equalToConstant: 65)
         ])
     }

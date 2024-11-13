@@ -22,6 +22,8 @@ class SignInEmailVC: UIViewController {
     private var alert: Alert?
     
     private weak var delegade: SignInEmailVCProtocol?
+    weak var authCompletionDelegate: AuthenticationCompletionDelegate?
+    
     
     public func delegade(delegade: SignInEmailVCProtocol?) {
         self.delegade = delegade
@@ -36,12 +38,26 @@ class SignInEmailVC: UIViewController {
         navigationController?.isNavigationBarHidden = true
     }
     
+    public func validateTextFields(){
+        let email: String = screen?.getEmail() ?? ""
+        let password: String = screen?.getPassword() ?? ""
+        
+        if !email.isEmpty && !password.isEmpty {
+            screen?.signInButton.isEnabled = true
+            screen?.signInButton.titleLabel?.textColor = .white
+        }else{
+            screen?.signInButton.isEnabled = false
+            screen?.signInButton.titleLabel?.textColor = .darkGray
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        auth = Auth.auth()
         screen?.delegate(delegate: self)
         screen?.configTextFieldDelegate(delegate: self)
         hideKeyboardWhenTappedAround()
-        auth = Auth.auth()
+        
     }
     
 }
@@ -49,7 +65,7 @@ class SignInEmailVC: UIViewController {
 extension SignInEmailVC: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        self.screen?.validateTextFields()
+        validateTextFields()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -62,9 +78,11 @@ extension SignInEmailVC: SignInEmailViewProtocol {
     func actionSignInButton()  {
         // buscando os dados processados na viewModel
         viewModel.didReceiveFormData(email: screen?.getEmail() ?? "", password: screen?.getPassword() ?? "")
-        let vc = SettingsVC()
-        navigationController?.pushViewController(vc, animated: true)
-       
+        validateTextFields()
+        
+        let mainTabBarController = MainTabBarController()
+        mainTabBarController.modalPresentationStyle = .fullScreen
+        present(mainTabBarController, animated: true, completion: nil)
     }
     
     func actionRegisterButton() {

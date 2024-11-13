@@ -36,9 +36,13 @@ extension SettingsVC: SettingsScreenDelegade {
     func tappedButtonAction() {
         try? viewModel.signOut()
         
-        let vc = SettingsVC()
-        navigationController?.popViewController(animated: true)
+        let vc = SignInEmailVC()
+        let navVC = UINavigationController(rootViewController: vc)
+        navVC.modalPresentationStyle = .fullScreen
+        self.present(navVC, animated: true, completion: nil)
+    }
+        
     }
     
     
-}
+

@@ -24,9 +24,9 @@ class MainTabBarController: UITabBarController{
         let homeVC = UINavigationController(rootViewController: HomeVC())
 //        let searchVC = UINavigationController(rootViewController: SearchVC())
 //        let settingsVC = UINavigationController(rootViewController: MenuVC())
-//        let requestVC = UINavigationController(rootViewController: RequestVC())
+        let settingsVC = UINavigationController(rootViewController: SettingsVC())
         
-        setViewControllers([homeVC], animated: true)
+        setViewControllers([homeVC, settingsVC], animated: true)
         
        
         tabBar.tintColor = .red
@@ -38,6 +38,9 @@ class MainTabBarController: UITabBarController{
         
         items[0].title = "Home"
         items[0].image = UIImage(systemName: "house.fill")
+        
+        items[1].title = "Gear"
+        items[1].image = UIImage(systemName: "gear")
         
 //        items[1].title = "Buscar"
 //        items[1].image = UIImage(systemName: "magnifyingglass")
