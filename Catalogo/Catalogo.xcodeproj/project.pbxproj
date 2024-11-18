@@ -120,11 +120,9 @@
 		4B0F97652C92354D0053005B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				4B713A342C9465000032DA81 /* RootView */,
-				4B5A63242CD97A0700839C87 /* Settings */,
 				4B2F71432C88F7D400F5F2E2 /* Authentication */,
+				4B713A342C9465000032DA81 /* RootView */,
 				4B0F97672C9236640053005B /* TabBar */,
-				4B0F976D2C9236E90053005B /* Home */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -133,6 +131,8 @@
 			isa = PBXGroup;
 			children = (
 				4B0F976A2C92367E0053005B /* MainTabBar */,
+				4B0F976D2C9236E90053005B /* Home */,
+				4B5A63242CD97A0700839C87 /* Settings */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -215,9 +215,8 @@
 			isa = PBXGroup;
 			children = (
 				4BBA27E12CC96B800017F7EF /* AuthenticationManager.swift */,
-				4B2F71442C88F80700F5F2E2 /* AuthenticationView.swift */,
-				4B2F71462C88F82200F5F2E2 /* AuthenticationVC.swift */,
-				4B2F71692C89026500F5F2E2 /* signInWIthEmail */,
+				4BE5A35B2CE632E9003962FB /* Authentication */,
+				4B2F71692C89026500F5F2E2 /* SignInWIthEmail */,
 				4B0F97782C9238710053005B /* Register */,
 			);
 			path = Authentication;
@@ -243,14 +242,14 @@
 			path = "../../../Youtube/chatGPT/chatGPT-app-ViewCode/src/Utils";
 			sourceTree = "<group>";
 		};
-		4B2F71692C89026500F5F2E2 /* signInWIthEmail */ = {
+		4B2F71692C89026500F5F2E2 /* SignInWIthEmail */ = {
 			isa = PBXGroup;
 			children = (
 				4B924D4D2CB852F0003F26D5 /* SignInEmailViewModel.swift */,
 				4B2F716A2C89029800F5F2E2 /* SignInEmailVC.swift */,
 				4B2F716C2C8902AB00F5F2E2 /* SignInEmailView.swift */,
 			);
-			path = signInWIthEmail;
+			path = SignInWIthEmail;
 			sourceTree = "<group>";
 		};
 		4B5A63242CD97A0700839C87 /* Settings */ = {
@@ -269,6 +268,15 @@
 				4B713A372C9465270032DA81 /* RootVC.swift */,
 			);
 			path = RootView;
+			sourceTree = "<group>";
+		};
+		4BE5A35B2CE632E9003962FB /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				4B2F71442C88F80700F5F2E2 /* AuthenticationView.swift */,
+				4B2F71462C88F82200F5F2E2 /* AuthenticationVC.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

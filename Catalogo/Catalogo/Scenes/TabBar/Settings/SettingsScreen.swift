@@ -22,7 +22,7 @@ class SettingsScreen: UIView {
     lazy var viewBackGround: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .green //UIColor(red: 26/255, green: 26/255, blue: 1/255, alpha: 1.0)
+        view.backgroundColor =  UIColor(red: 26/255, green: 26/255, blue: 1/255, alpha: 1.0)
         return view
     }()
     
@@ -30,7 +30,7 @@ class SettingsScreen: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Settings"
-        label.textColor = .black
+        label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 40, weight: .bold)
         return label
     }()
