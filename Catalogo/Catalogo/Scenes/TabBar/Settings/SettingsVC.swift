@@ -10,11 +10,38 @@ import UIKit
 @MainActor
 final class SeetingsViewModel {
     
+    private var authenticationManager = AuthenticationManager()
+        
+    func signOut() throws {
+        try authenticationManager.signOut()
+    }
+    
+    func resetPassword() async throws {
+        let authUser = try authenticationManager.getAuthenticateUser()
+        
+        guard let email = authUser.email else {
+            throw URLError(.fileDoesNotExist)
+        }
+        
+        try await authenticationManager.resetPassword(email: email)
+    }
+    
+    func updateEmail() async throws {
+        // fake email
+        let fakeEmail: String = "almnz@gmail.com"
+        try await authenticationManager.updateEmail(email: fakeEmail)
+    }
+    
+    func updatePassword() async throws {
+        let fakePassword: String = "Hello123456789"
+        try await authenticationManager.updatePassword(password: fakePassword)
+    }
 }
+
 
 class SettingsVC: UIViewController {
     private var screen: SettingsScreen?
-    private var viewModel = AuthenticationManager()
+    private var viewModel = SeetingsViewModel()
     
     override func loadView() {
         screen = SettingsScreen()
@@ -33,7 +60,34 @@ class SettingsVC: UIViewController {
 }
 
 extension SettingsVC: SettingsScreenDelegade {
-    func tappedButtonAction() {
+    func tappedUpdatePasswordButtonAction() async {
+        do {
+            try await viewModel.updatePassword()
+            print("Password Updated !")
+        } catch {
+            print("Failed to update password: \(error)")
+        }
+    }
+    
+    func tappedUpdateEmailButtonAction() async {
+        do {
+            try await viewModel.updateEmail()
+            print("Email Updated !")
+        } catch {
+            print("Failed to update email: \(error)")
+        }
+    }
+    
+    func tappedResetPasswordButtonAction() async {
+        do {
+            try await viewModel.resetPassword()
+             print("Password Reset !")
+        } catch {
+            print("Failed to reset password: \(error)")
+        }
+    }
+
+    func tappedLogOutActionButton() {
         try? viewModel.signOut()
         
         let vc = SignInEmailVC()

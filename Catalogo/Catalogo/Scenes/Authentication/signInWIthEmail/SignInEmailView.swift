@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 protocol SignInEmailViewProtocol: AnyObject {
     func actionSignInButton()
     func actionRegisterButton()
@@ -84,7 +83,7 @@ class SignInEmailView: UIView {
         button.clipsToBounds = true
         button.layer.cornerRadius = 7.5
         button.backgroundColor = UIColor( red: 102/255, green: 103/255, blue: 171/255, alpha: 1.0)
-        button.addTarget(self , action: #selector(self.tappedSignInButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector(self.tappedSignInButton), for: .touchUpInside)
         return button
     }()
     
@@ -97,13 +96,13 @@ class SignInEmailView: UIView {
         register.translatesAutoresizingMaskIntoConstraints = false
         register.setTitle("cadastre-se", for: .normal)
         register.titleLabel?.font = UIFont.systemFont(ofSize: 18)
-        register.setTitleColor(.darkGray, for: .normal)
+        register.setTitleColor(.white, for: .normal)
         register.backgroundColor = .clear
-        register.addTarget(self, action: #selector(tappedRegisterButton) , for: .touchUpInside)
+        register.addTarget(self, action: #selector(self.tappedRegisterButton) , for: .touchUpInside)
         return register
     }()
     
-    @objc private func tappedRegisterButton(){
+    @objc func tappedRegisterButton(){
         self.delegate?.actionRegisterButton()
     }
     

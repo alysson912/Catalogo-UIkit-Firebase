@@ -35,15 +35,37 @@ final class AuthenticationManager {
         return  AuthDataResultModel(user: user)
     }
     
-    @discardableResult 
+    @discardableResult
     func signInUser(with email: String, password: String) async throws -> AuthDataResultModel {
         let authDataResult = try await  Auth.auth().signIn(withEmail: email, password: password)
         return AuthDataResultModel(user: authDataResult.user)
     }
     
-    func signOut() throws {
-       try Auth.auth().signOut()
+    func updateEmail(email: String) async throws {
+        guard let user = Auth.auth().currentUser else {
+            throw URLError(.badServerResponse)
+        }
+        //MARK: will be Deprecated, PROCURAR POR OUTRA SOLUCAO PARA ATUALIZAR EMAIL
+       // try await user.updateEmail(to: email)
+        try await user.sendEmailVerification(beforeUpdatingEmail: email) // new
     }
     
+    
+    func resetPassword(email: String) async throws {
+        try await Auth.auth().sendPasswordReset(withEmail: email)
+    }
+    
+    func updatePassword(password: String) async throws {
+        guard let user = Auth.auth().currentUser else {
+            throw URLError(.badServerResponse)
+        }
+        
+        try await user.updatePassword(to: password)
+    }
+    
+    
+    func signOut() throws {
+        try Auth.auth().signOut()
+    }
 }
 

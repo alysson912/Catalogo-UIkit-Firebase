@@ -120,8 +120,8 @@
 		4B0F97652C92354D0053005B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				4B2F71432C88F7D400F5F2E2 /* Authentication */,
 				4B713A342C9465000032DA81 /* RootView */,
+				4B2F71432C88F7D400F5F2E2 /* Authentication */,
 				4B0F97672C9236640053005B /* TabBar */,
 			);
 			path = Scenes;
@@ -177,6 +177,21 @@
 				4B0F97742C9238710053005B /* RegisterScreen.swift */,
 			);
 			path = Register;
+			sourceTree = "<group>";
+		};
+		4B0FD73A2CF5152A00CF7963 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				4B0FD73B2CF5153900CF7963 /* ResetEmailAndPasswordForm */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		4B0FD73B2CF5153900CF7963 /* ResetEmailAndPasswordForm */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ResetEmailAndPasswordForm;
 			sourceTree = "<group>";
 		};
 		4B2F71122C88C41D00F5F2E2 = {
@@ -257,6 +272,7 @@
 			children = (
 				4B5A63252CD97A3400839C87 /* SettingsVC.swift */,
 				4B5A63272CD97A4B00839C87 /* SettingsScreen.swift */,
+				4B0FD73A2CF5152A00CF7963 /* Subviews */,
 			);
 			path = Settings;
 			sourceTree = "<group>";

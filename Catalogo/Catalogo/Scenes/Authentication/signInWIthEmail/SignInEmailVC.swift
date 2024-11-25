@@ -86,10 +86,12 @@ extension SignInEmailVC: SignInEmailViewProtocol {
     }
     
     func actionRegisterButton() {
-        func actionRegisterButton() {
+            let vc = RegisterVC()
+            navigationController?.pushViewController(vc, animated: true)
+            
             
         }
-    }
+    
     
     
 }

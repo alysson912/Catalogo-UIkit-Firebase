@@ -51,7 +51,7 @@ extension RootVC: RootViewProtocol {
         let authUser = try? authenticationManager.getAuthenticateUser()
         
         if authUser == nil {
-            let signInVC = SignInEmailVC()
+            let signInVC = AuthenticationVC()
             return signInVC
         } else {
             return MainTabBarController()

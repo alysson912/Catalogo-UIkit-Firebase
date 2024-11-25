@@ -8,7 +8,10 @@
 import UIKit
 
 protocol SettingsScreenDelegade: AnyObject {
-    func tappedButtonAction()
+    func tappedLogOutActionButton()
+    func tappedResetPasswordButtonAction() async
+    func tappedUpdatePasswordButtonAction() async
+    func tappedUpdateEmailButtonAction() async
 }
 
 class SettingsScreen: UIView {
@@ -38,7 +41,7 @@ class SettingsScreen: UIView {
     lazy var logOutButton: UIButton = {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.backgroundColor = .black
+        btn.backgroundColor = .red
         btn.setTitle("logOut", for: .normal)
         btn.setBackgroundImage(UIImage( named: "gradient3"), for: .normal)
         btn.clipsToBounds = true
@@ -48,14 +51,77 @@ class SettingsScreen: UIView {
         return btn
     }()
     
+    lazy var resetPasswordButton: UIButton = {
+        let btn = UIButton()
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.backgroundColor = .blue
+        btn.setTitle("reset Password", for: .normal)
+        btn.setBackgroundImage(UIImage( named: "gradient3"), for: .normal)
+        btn.clipsToBounds = true
+        btn.layer.cornerRadius =  8
+        btn.contentMode = .scaleAspectFill
+        btn.addTarget(self, action: #selector(tappedResetPasswordButton), for: .touchUpInside)
+        return btn
+    }()
+    
+    lazy var updatePasswordButton: UIButton = {
+        let btn = UIButton()
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.backgroundColor = .purple
+        btn.setTitle("updatePassword", for: .normal)
+        btn.setBackgroundImage(UIImage( named: "gradient3"), for: .normal)
+        btn.clipsToBounds = true
+        btn.layer.cornerRadius =  8
+        btn.contentMode = .scaleAspectFill
+        btn.addTarget(self, action: #selector(tappedUpdatePasswordButton), for: .touchUpInside)
+        return btn
+    }()
+    
+    lazy var updateEmailButton: UIButton = {
+        let btn = UIButton()
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.backgroundColor = .darkGray
+        btn.setTitle("updateEmail", for: .normal)
+        btn.setBackgroundImage(UIImage( named: "gradient3"), for: .normal)
+        btn.clipsToBounds = true
+        btn.layer.cornerRadius =  8
+        btn.contentMode = .scaleAspectFill
+        btn.addTarget(self, action: #selector(tappedUpdateEmailButton), for: .touchUpInside)
+        return btn
+    }()
+    
     @objc func tappedLogOutButton() {
-        delegate?.tappedButtonAction()
+        delegate?.tappedLogOutActionButton()
+    }
+    
+    //Task é usado para criar um contexto assíncrono dentro de métodos síncronos. Isso é ideal para integrar chamadas assíncronas a métodos como @objc.
+    @objc func tappedResetPasswordButton()  {
+        Task {
+            // [weak self] in //Para evitar ciclos de retenção, o bloco usa [weak self].
+            await delegate?.tappedResetPasswordButtonAction()
+        }
+    }
+    
+    @objc func tappedUpdatePasswordButton()  {
+        
+        Task {
+            await delegate?.tappedUpdatePasswordButtonAction()
+        }
+    }
+    
+    @objc func tappedUpdateEmailButton()  {
+        Task {
+            await delegate?.tappedUpdateEmailButtonAction()
+        }
     }
     
     private func addViews(){
         addSubview(viewBackGround)
         viewBackGround.addSubview(titleLabel)
         viewBackGround.addSubview(logOutButton)
+        viewBackGround.addSubview(resetPasswordButton)
+        viewBackGround.addSubview(updatePasswordButton)
+        viewBackGround.addSubview(updateEmailButton)
     }
     
     override init(frame: CGRect) {
@@ -71,15 +137,32 @@ class SettingsScreen: UIView {
     private func setupConstrains() {
         viewBackGround.pin(to: self)
         NSLayoutConstraint.activate( [
-       
+            
             titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
             
-            logOutButton.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
-            logOutButton.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            logOutButton.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
-            logOutButton.heightAnchor.constraint(equalToConstant: 65)
+            updateEmailButton.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
+            updateEmailButton.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
+            updateEmailButton.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
+            updateEmailButton.heightAnchor.constraint(equalToConstant: 65),
+            
+            updatePasswordButton.topAnchor.constraint(equalTo: updateEmailButton.bottomAnchor, constant: 10),
+            updatePasswordButton.leadingAnchor.constraint(equalTo: updateEmailButton.leadingAnchor),
+            updatePasswordButton.trailingAnchor.constraint(equalTo: updateEmailButton.trailingAnchor),
+            updatePasswordButton.heightAnchor.constraint(equalToConstant: 65),
+            
+            resetPasswordButton.topAnchor.constraint(equalTo: updatePasswordButton.bottomAnchor, constant: 10),
+            resetPasswordButton.leadingAnchor.constraint(equalTo: updatePasswordButton.leadingAnchor),
+            resetPasswordButton.trailingAnchor.constraint(equalTo: updatePasswordButton.trailingAnchor),
+            resetPasswordButton.heightAnchor.constraint(equalToConstant: 65),
+            
+            logOutButton.topAnchor.constraint(equalTo: resetPasswordButton.bottomAnchor, constant: 10),
+            logOutButton.leadingAnchor.constraint(equalTo: resetPasswordButton.leadingAnchor),
+            logOutButton.trailingAnchor.constraint(equalTo: resetPasswordButton.trailingAnchor),
+            logOutButton.heightAnchor.constraint(equalToConstant: 65),
+            
+            
         ])
     }
 }
