@@ -52,7 +52,7 @@ class SignInEmailView: UIView {
         tf.layer.borderWidth = 1.0
         tf.layer.borderColor = UIColor.white.cgColor
         
-        tf.text = "al123@gmail.com"
+        tf.text = "asdasfd234123@gmail.com"
         return tf
     }()
     

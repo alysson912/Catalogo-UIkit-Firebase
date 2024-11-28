@@ -80,6 +80,8 @@ extension SignInEmailVC: SignInEmailViewProtocol {
         viewModel.didReceiveFormData(email: screen?.getEmail() ?? "", password: screen?.getPassword() ?? "")
         validateTextFields()
         
+        
+        
         let mainTabBarController = MainTabBarController()
         mainTabBarController.modalPresentationStyle = .fullScreen
         present(mainTabBarController, animated: true, completion: nil)

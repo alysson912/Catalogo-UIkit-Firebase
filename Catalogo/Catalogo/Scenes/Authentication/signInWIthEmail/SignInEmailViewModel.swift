@@ -21,9 +21,8 @@ class SignInEmailViewModel: SignInEmailVCProtocol{
         self.email = email
         self.password = password
         
-     
             do {
-                signUp(email: email, password: password)
+                signIn(email: email, password: password)
                 print("Login success")
                 return
             } catch {

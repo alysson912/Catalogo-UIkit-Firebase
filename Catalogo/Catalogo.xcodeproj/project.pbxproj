@@ -15,6 +15,10 @@
 		4B0F97732C9237000053005B /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0F97702C9237000053005B /* HomeVC.swift */; };
 		4B0F97792C9238710053005B /* RegisterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0F97742C9238710053005B /* RegisterScreen.swift */; };
 		4B0F977A2C9238710053005B /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0F97762C9238710053005B /* RegisterVC.swift */; };
+		4B1A4B6D2CF8912E00AD6A0D /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1A4B662CF8912E00AD6A0D /* UIFont+Extension.swift */; };
+		4B1A4B6E2CF8912E00AD6A0D /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1A4B682CF8912E00AD6A0D /* UIViewController+Extension.swift */; };
+		4B1A4B6F2CF8912E00AD6A0D /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1A4B652CF8912E00AD6A0D /* UIColor+Extension.swift */; };
+		4B1A4B702CF8912E00AD6A0D /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1A4B672CF8912E00AD6A0D /* UIView + Extension.swift */; };
 		4B2F711F2C88C41D00F5F2E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2F711E2C88C41D00F5F2E2 /* AppDelegate.swift */; };
 		4B2F71212C88C41D00F5F2E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2F71202C88C41D00F5F2E2 /* SceneDelegate.swift */; };
 		4B2F71282C88C41F00F5F2E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B2F71272C88C41F00F5F2E2 /* Assets.xcassets */; };
@@ -28,10 +32,6 @@
 		4B2F71422C88C92500F5F2E2 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 4B2F71412C88C92500F5F2E2 /* FirebaseStorage */; };
 		4B2F71452C88F80700F5F2E2 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2F71442C88F80700F5F2E2 /* AuthenticationView.swift */; };
 		4B2F71472C88F82200F5F2E2 /* AuthenticationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2F71462C88F82200F5F2E2 /* AuthenticationVC.swift */; };
-		4B2F71612C88FB9600F5F2E2 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2F71552C88FB9600F5F2E2 /* UIColor+Extension.swift */; };
-		4B2F71622C88FB9600F5F2E2 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2F71562C88FB9600F5F2E2 /* UIFont+Extension.swift */; };
-		4B2F71642C88FB9600F5F2E2 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2F71582C88FB9600F5F2E2 /* UIViewController+Extension.swift */; };
-		4B2F71682C88FCE900F5F2E2 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2F71672C88FCE900F5F2E2 /* UIView + Extension.swift */; };
 		4B2F716B2C89029800F5F2E2 /* SignInEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2F716A2C89029800F5F2E2 /* SignInEmailVC.swift */; };
 		4B2F716D2C8902AB00F5F2E2 /* SignInEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2F716C2C8902AB00F5F2E2 /* SignInEmailView.swift */; };
 		4B5A63262CD97A3400839C87 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5A63252CD97A3400839C87 /* SettingsVC.swift */; };
@@ -51,6 +51,10 @@
 		4B0F97702C9237000053005B /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		4B0F97742C9238710053005B /* RegisterScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterScreen.swift; sourceTree = "<group>"; };
 		4B0F97762C9238710053005B /* RegisterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		4B1A4B652CF8912E00AD6A0D /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		4B1A4B662CF8912E00AD6A0D /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		4B1A4B672CF8912E00AD6A0D /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
+		4B1A4B682CF8912E00AD6A0D /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		4B2F711B2C88C41D00F5F2E2 /* Catalogo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Catalogo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B2F711E2C88C41D00F5F2E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B2F71202C88C41D00F5F2E2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,10 +64,6 @@
 		4B2F71342C88C7AE00F5F2E2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4B2F71442C88F80700F5F2E2 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		4B2F71462C88F82200F5F2E2 /* AuthenticationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationVC.swift; sourceTree = "<group>"; };
-		4B2F71552C88FB9600F5F2E2 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		4B2F71562C88FB9600F5F2E2 /* UIFont+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
-		4B2F71582C88FB9600F5F2E2 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
-		4B2F71672C88FCE900F5F2E2 /* UIView + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		4B2F716A2C89029800F5F2E2 /* SignInEmailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailVC.swift; sourceTree = "<group>"; };
 		4B2F716C2C8902AB00F5F2E2 /* SignInEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailView.swift; sourceTree = "<group>"; };
 		4B5A63252CD97A3400839C87 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
@@ -179,19 +179,39 @@
 			path = Register;
 			sourceTree = "<group>";
 		};
-		4B0FD73A2CF5152A00CF7963 /* Subviews */ = {
+		4B1A4B692CF8912E00AD6A0D /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				4B0FD73B2CF5153900CF7963 /* ResetEmailAndPasswordForm */,
+				4B1A4B652CF8912E00AD6A0D /* UIColor+Extension.swift */,
+				4B1A4B662CF8912E00AD6A0D /* UIFont+Extension.swift */,
+				4B1A4B672CF8912E00AD6A0D /* UIView + Extension.swift */,
+				4B1A4B682CF8912E00AD6A0D /* UIViewController+Extension.swift */,
 			);
-			path = Subviews;
+			path = Extension;
 			sourceTree = "<group>";
 		};
-		4B0FD73B2CF5153900CF7963 /* ResetEmailAndPasswordForm */ = {
+		4B1A4B6A2CF8912E00AD6A0D /* Loading */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = ResetEmailAndPasswordForm;
+			path = Loading;
+			sourceTree = "<group>";
+		};
+		4B1A4B6B2CF8912E00AD6A0D /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
+		4B1A4B6C2CF8912E00AD6A0D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4B1A4B692CF8912E00AD6A0D /* Extension */,
+				4B1A4B6A2CF8912E00AD6A0D /* Loading */,
+				4B1A4B6B2CF8912E00AD6A0D /* Sound */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		4B2F71122C88C41D00F5F2E2 = {
@@ -214,8 +234,8 @@
 		4B2F711D2C88C41D00F5F2E2 /* Catalogo */ = {
 			isa = PBXGroup;
 			children = (
+				4B1A4B6C2CF8912E00AD6A0D /* Utils */,
 				4B0F97612C9234420053005B /* Alert */,
-				4B2F715E2C88FB9600F5F2E2 /* Utils */,
 				4B0F975C2C92313D0053005B /* Services */,
 				4B0F97652C92354D0053005B /* Scenes */,
 				4B2F71272C88C41F00F5F2E2 /* Assets.xcassets */,
@@ -237,26 +257,6 @@
 			path = Authentication;
 			sourceTree = "<group>";
 		};
-		4B2F71592C88FB9600F5F2E2 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				4B2F71552C88FB9600F5F2E2 /* UIColor+Extension.swift */,
-				4B2F71562C88FB9600F5F2E2 /* UIFont+Extension.swift */,
-				4B2F71672C88FCE900F5F2E2 /* UIView + Extension.swift */,
-				4B2F71582C88FB9600F5F2E2 /* UIViewController+Extension.swift */,
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
-		4B2F715E2C88FB9600F5F2E2 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				4B2F71592C88FB9600F5F2E2 /* Extension */,
-			);
-			name = Utils;
-			path = "../../../Youtube/chatGPT/chatGPT-app-ViewCode/src/Utils";
-			sourceTree = "<group>";
-		};
 		4B2F71692C89026500F5F2E2 /* SignInWIthEmail */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,7 +272,6 @@
 			children = (
 				4B5A63252CD97A3400839C87 /* SettingsVC.swift */,
 				4B5A63272CD97A4B00839C87 /* SettingsScreen.swift */,
-				4B0FD73A2CF5152A00CF7963 /* Subviews */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -377,7 +376,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B2F71642C88FB9600F5F2E2 /* UIViewController+Extension.swift in Sources */,
 				4B2F711F2C88C41D00F5F2E2 /* AppDelegate.swift in Sources */,
 				4B0F976B2C92367E0053005B /* MainTabBarController.swift in Sources */,
 				4B2F71452C88F80700F5F2E2 /* AuthenticationView.swift in Sources */,
@@ -388,18 +386,19 @@
 				4B2F71212C88C41D00F5F2E2 /* SceneDelegate.swift in Sources */,
 				4B2F716B2C89029800F5F2E2 /* SignInEmailVC.swift in Sources */,
 				4B2F71472C88F82200F5F2E2 /* AuthenticationVC.swift in Sources */,
+				4B1A4B6D2CF8912E00AD6A0D /* UIFont+Extension.swift in Sources */,
+				4B1A4B6E2CF8912E00AD6A0D /* UIViewController+Extension.swift in Sources */,
+				4B1A4B6F2CF8912E00AD6A0D /* UIColor+Extension.swift in Sources */,
+				4B1A4B702CF8912E00AD6A0D /* UIView + Extension.swift in Sources */,
 				4B0F977A2C9238710053005B /* RegisterVC.swift in Sources */,
 				4B713A382C9465270032DA81 /* RootVC.swift in Sources */,
 				4BBA27E22CC96B800017F7EF /* AuthenticationManager.swift in Sources */,
-				4B2F71622C88FB9600F5F2E2 /* UIFont+Extension.swift in Sources */,
 				4B0F97792C9238710053005B /* RegisterScreen.swift in Sources */,
 				4B5A63282CD97A4B00839C87 /* SettingsScreen.swift in Sources */,
 				4B0F975E2C9231570053005B /* HomeService.swift in Sources */,
 				4B0F97602C92317A0053005B /* GenericService.swift in Sources */,
 				4B924D4E2CB852F0003F26D5 /* SignInEmailViewModel.swift in Sources */,
-				4B2F71612C88FB9600F5F2E2 /* UIColor+Extension.swift in Sources */,
 				4B5A63262CD97A3400839C87 /* SettingsVC.swift in Sources */,
-				4B2F71682C88FCE900F5F2E2 /* UIView + Extension.swift in Sources */,
 				4B2F716D2C8902AB00F5F2E2 /* SignInEmailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
