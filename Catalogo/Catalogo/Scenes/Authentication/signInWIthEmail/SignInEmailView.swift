@@ -119,16 +119,7 @@ class SignInEmailView: UIView {
         return self.passwordTextField.text ?? ""
     }
     
-    private func configButtonEnable(_ enable : Bool ){
-        if enable{
-            self.signInButton.setTitleColor(.white, for: .normal)
-            self.signInButton.isEnabled = true
-        }else {
-            self.signInButton.setTitleColor(.lightGray, for: .normal)
-            self.signInButton.isEnabled = false
-        }
-    }
-    
+
     private func addViews() {
         addSubview(viewBackGround)
         viewBackGround.addSubview(signInWithEmailTitleLabel)

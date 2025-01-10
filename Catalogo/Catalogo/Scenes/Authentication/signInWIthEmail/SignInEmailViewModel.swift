@@ -21,34 +21,16 @@ class SignInEmailViewModel: SignInEmailVCProtocol{
         self.email = email
         self.password = password
         
-            do {
-                signIn(email: email, password: password)
-                print("Login success")
-                return
-            } catch {
-                print(error)
-            }
-        }
-    
-    
-    func signIn(email: String, password: String) {
-        guard !email.isEmpty, !password.isEmpty else {
-            print("No email or password found.")
+        do {
+            signIn(email: email, password: password)
             return
-        }
-        
-        Task {
-            do {
-                let returnedUserData = try await authenticationManager.createUser(with: email, password: password)
-                print("success")
-                print(returnedUserData)
-            } catch {
-                print("ERROR: \(error)")
-            }
+        } catch {
+            print(error)
         }
     }
     
-    func signUp(email: String, password: String) {
+    
+    func signIn(email: String, password: String) {
         guard !email.isEmpty, !password.isEmpty else {
             print("No email or password found.")
             return
@@ -64,6 +46,23 @@ class SignInEmailViewModel: SignInEmailVCProtocol{
             }
         }
     }
-}  // teste 2
+}
+//    func signUp(email: String, password: String) {
+//        guard !email.isEmpty, !password.isEmpty else {
+//            print("No email or password found.")
+//            return
+//        }
+//        
+//        Task {
+//            do {
+//                let returnedUserData = try await authenticationManager.createUser(with: email, password: password)
+//                print("success")
+//                print(returnedUserData)
+//            } catch {
+//                print("ERROR: \(error)")
+//            }
+//        }
+//    }
+//}  // teste 2
 
 

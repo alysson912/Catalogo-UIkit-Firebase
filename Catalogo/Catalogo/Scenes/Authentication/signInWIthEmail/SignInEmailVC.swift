@@ -18,11 +18,12 @@ class SignInEmailVC: UIViewController {
     private var authenticationManager = AuthenticationManager()
     
     private var screen: SignInEmailView?
-    private var auth: Auth?
-    private var alert: Alert?
+    //   private var auth: Auth?
+    private var alert: AlertController?
     
     private weak var delegade: SignInEmailVCProtocol?
-    weak var authCompletionDelegate: AuthenticationCompletionDelegate?
+    
+    // weak var authCompletionDelegate: AuthenticationCompletionDelegate?
     
     
     public func delegade(delegade: SignInEmailVCProtocol?) {
@@ -31,6 +32,7 @@ class SignInEmailVC: UIViewController {
     
     override func loadView() {
         screen = SignInEmailView()
+        alert = AlertController(controller: self)
         view = screen
     }
     
@@ -51,13 +53,22 @@ class SignInEmailVC: UIViewController {
         }
     }
     
+    private func configButtonEnable(_ enable : Bool ){
+        if enable{
+            self.screen?.signInButton.setTitleColor(.white, for: .normal)
+            self.screen?.signInButton.isEnabled = true
+        }else {
+            self.screen?.signInButton.setTitleColor(.lightGray, for: .normal)
+            self.screen?.signInButton.isEnabled = false
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        auth = Auth.auth()
+        configButtonEnable(false)
         screen?.delegate(delegate: self)
         screen?.configTextFieldDelegate(delegate: self)
         hideKeyboardWhenTappedAround()
-        
     }
     
 }
@@ -78,9 +89,6 @@ extension SignInEmailVC: SignInEmailViewProtocol {
     func actionSignInButton()  {
         // buscando os dados processados na viewModel
         viewModel.didReceiveFormData(email: screen?.getEmail() ?? "", password: screen?.getPassword() ?? "")
-        validateTextFields()
-        
-        
         
         let mainTabBarController = MainTabBarController()
         mainTabBarController.modalPresentationStyle = .fullScreen
@@ -88,11 +96,10 @@ extension SignInEmailVC: SignInEmailViewProtocol {
     }
     
     func actionRegisterButton() {
-            let vc = RegisterVC()
-            navigationController?.pushViewController(vc, animated: true)
-            
-            
-        }
+        let vc = SignUpWithEmailVC()
+        navigationController?.pushViewController(vc, animated: true)
+        
+    }
     
     
     

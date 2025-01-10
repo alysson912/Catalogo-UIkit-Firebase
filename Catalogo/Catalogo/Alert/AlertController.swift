@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class Alert:NSObject{
+class AlertController:NSObject{
     
     var controller:UIViewController // criando classe controladora do alert, informando quem vai ser a controladora do alert
     
@@ -19,16 +19,18 @@ class Alert:NSObject{
     // chamando um alert
     func getAlert(titulo:String, mensagem:String, completion:(() -> Void)? = nil){// completion = botao de ação (opcional)
         let alertController = UIAlertController(title: titulo, message: mensagem, preferredStyle: .alert) // configurando alert(caixa externa)
-        let cancelar = UIAlertAction(title: "Ok", style: .cancel) { acao in completion?()} // configurando botao
-        alertController.addAction(cancelar)// adicioanndo botao dentro do alert controller
+        let ok = UIAlertAction(title: "Ok", style: .cancel) { acao in completion?()} // configurando botao
         
+        alertController.addAction(ok)// adicioanndo botao dentro do alert controller
         self.controller.present(alertController, animated: true, completion: nil) // ação ao clicar
     }
     
     
     func addContact(completion:((_ value:String) -> Void)? = nil){
         var _textField:UITextField?
+        
         let alert = UIAlertController(title: "Adicionar Usuario", message: "Digite uma email Valido", preferredStyle: .alert)
+        
         let ok = UIAlertAction(title: "Adicionar", style: .default) { (acao) in
             completion?(_textField?.text ?? "")
         }
