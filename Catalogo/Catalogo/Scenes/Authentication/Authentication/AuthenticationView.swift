@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import GoogleSignIn
+import GoogleSignInSwift
 
 protocol AuthenticationViewProtocol: AnyObject {
     func actionSignInWithEmailButton()
+    func actionSignInWithGoogle()
 }
 
 class AuthenticationView: UIView {
@@ -48,15 +51,28 @@ class AuthenticationView: UIView {
         btn.addTarget(self, action: #selector(tappedSignInWithEmail), for: .touchUpInside)
         return btn
     }()
-
+    
     @objc private func tappedSignInWithEmail() {
         delegate?.actionSignInWithEmailButton()
+    }
+
+    lazy var signInWithGoogleButton: GIDSignInButton = {
+        let btn = GIDSignInButton()
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.style = .wide
+        btn.addTarget(self, action: #selector(tappedSignInWithGoogle), for: .touchUpInside)
+        return btn
+    }()
+    
+    @objc private func tappedSignInWithGoogle() {
+        delegate?.actionSignInWithGoogle()
     }
     
     private func addViews() {
         addSubview(viewBackGround)
         viewBackGround.addSubview(titleLabel)
         viewBackGround.addSubview(signInWithEmailButton)
+        viewBackGround.addSubview(signInWithGoogleButton)
     }
     
     override init(frame: CGRect) {
@@ -80,7 +96,12 @@ class AuthenticationView: UIView {
             signInWithEmailButton.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
             signInWithEmailButton.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             signInWithEmailButton.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
-            signInWithEmailButton.heightAnchor.constraint(equalToConstant: 55)
+            signInWithEmailButton.heightAnchor.constraint(equalToConstant: 55),
+            
+            signInWithGoogleButton.topAnchor.constraint(equalTo: signInWithEmailButton.bottomAnchor, constant: 10),
+            signInWithGoogleButton.leadingAnchor.constraint(equalTo: signInWithEmailButton.leadingAnchor),
+            signInWithGoogleButton.trailingAnchor.constraint(equalTo: signInWithEmailButton.trailingAnchor),
+            signInWithGoogleButton.heightAnchor.constraint(equalToConstant: 55)
         ])
     }
 }

@@ -90,7 +90,7 @@ extension SettingsVC: SettingsScreenDelegade {
     func tappedLogOutActionButton() {
         try? viewModel.signOut()
         
-        let vc = SignInEmailVC()
+        let vc = AuthenticationVC()
         let navVC = UINavigationController(rootViewController: vc)
         navVC.modalPresentationStyle = .fullScreen
         self.present(navVC, animated: true, completion: nil)

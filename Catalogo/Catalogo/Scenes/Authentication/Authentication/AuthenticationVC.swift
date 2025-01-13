@@ -7,11 +7,16 @@
 
 import UIKit
 
+
 protocol AuthenticationVCProtocol: AnyObject {
     func authentication()
 }
 
 class AuthenticationVC: UIViewController, AuthenticationVCProtocol {
+    
+    private var viewModel = AuthenticationViewModel()
+    
+    
     func authentication() {
         print("Autenticando no AuthenticationVC")
     }
@@ -37,6 +42,21 @@ class AuthenticationVC: UIViewController, AuthenticationVCProtocol {
 }
 
 extension AuthenticationVC: AuthenticationViewProtocol {
+    func actionSignInWithGoogle() {
+        Task {
+            do {
+                try await viewModel.signInGoogle()
+                
+                let mainTabBarController = MainTabBarController()
+                mainTabBarController.modalPresentationStyle = .fullScreen
+                present(mainTabBarController, animated: true, completion: nil)
+                
+            } catch {
+                print(error)
+            }
+        }
+    }
+    
     func actionSignInWithEmailButton() {
         let vc = SignInEmailVC()
         navigationController?.pushViewController(vc, animated: true)

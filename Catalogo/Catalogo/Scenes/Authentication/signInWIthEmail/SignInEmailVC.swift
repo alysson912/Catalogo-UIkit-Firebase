@@ -86,6 +86,11 @@ extension SignInEmailVC: UITextFieldDelegate {
 }
 
 extension SignInEmailVC: SignInEmailViewProtocol {
+    
+    func actionBackButton() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     func actionSignInButton()  {
         // buscando os dados processados na viewModel
         viewModel.didReceiveFormData(email: screen?.getEmail() ?? "", password: screen?.getPassword() ?? "")

@@ -10,6 +10,7 @@ import UIKit
 protocol SignInEmailViewProtocol: AnyObject {
     func actionSignInButton()
     func actionRegisterButton()
+    func actionBackButton()
 }
 
 class SignInEmailView: UIView {
@@ -27,6 +28,15 @@ class SignInEmailView: UIView {
         image.image = UIImage( named: "signInBackground" )
         image.contentMode = .scaleToFill
         return image
+    }()
+    
+    private  lazy var backButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(systemName: "arrow.left"), for: .normal)
+        button.tintColor = .white
+        button.addTarget(self, action: #selector(tappedBackButton), for: .touchUpInside)
+        return button
     }()
     
     private lazy var signInWithEmailTitleLabel: UILabel = {
@@ -102,6 +112,10 @@ class SignInEmailView: UIView {
         return register
     }()
     
+    @objc private func tappedBackButton(){
+        self.delegate?.actionBackButton()
+    }
+    
     @objc func tappedRegisterButton(){
         self.delegate?.actionRegisterButton()
     }
@@ -123,6 +137,7 @@ class SignInEmailView: UIView {
     private func addViews() {
         addSubview(viewBackGround)
         viewBackGround.addSubview(signInWithEmailTitleLabel)
+        viewBackGround.addSubview(backButton)
         viewBackGround.addSubview(emailTextField)
         viewBackGround.addSubview(passwordTextField)
         viewBackGround.addSubview(signInButton)
@@ -144,7 +159,12 @@ class SignInEmailView: UIView {
         viewBackGround.pin(to: self)
         NSLayoutConstraint.activate([
             
-            signInWithEmailTitleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 65),
+            backButton.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 5),
+            backButton.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 20),
+            backButton.widthAnchor.constraint(equalToConstant: 25),
+            backButton.heightAnchor.constraint(equalToConstant: 25),
+            
+            signInWithEmailTitleLabel.topAnchor.constraint(equalTo: backButton.bottomAnchor, constant: 65),
             signInWithEmailTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             signInWithEmailTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             

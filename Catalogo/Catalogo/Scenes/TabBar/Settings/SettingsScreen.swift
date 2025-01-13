@@ -34,7 +34,7 @@ class SettingsScreen: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Settings"
         label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 40, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 30, weight: .bold)
         return label
     }()
     
@@ -142,7 +142,7 @@ class SettingsScreen: UIView {
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
             
-            updateEmailButton.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
+            updateEmailButton.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 45),
             updateEmailButton.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             updateEmailButton.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
             updateEmailButton.heightAnchor.constraint(equalToConstant: 65),

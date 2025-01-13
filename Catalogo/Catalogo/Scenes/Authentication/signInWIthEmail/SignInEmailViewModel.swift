@@ -47,22 +47,5 @@ class SignInEmailViewModel: SignInEmailVCProtocol{
         }
     }
 }
-//    func signUp(email: String, password: String) {
-//        guard !email.isEmpty, !password.isEmpty else {
-//            print("No email or password found.")
-//            return
-//        }
-//        
-//        Task {
-//            do {
-//                let returnedUserData = try await authenticationManager.createUser(with: email, password: password)
-//                print("success")
-//                print(returnedUserData)
-//            } catch {
-//                print("ERROR: \(error)")
-//            }
-//        }
-//    }
-//}  // teste 2
 
 
