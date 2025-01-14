@@ -12,6 +12,7 @@
 		4B0EAFF42D3317F8000E1BCB /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4B0EAFF32D3317F8000E1BCB /* GoogleSignInSwift */; };
 		4B0EAFF62D359D82000E1BCB /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0EAFF52D359D82000E1BCB /* AuthenticationViewModel.swift */; };
 		4B0EAFF82D359FD1000E1BCB /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0EAFF72D359FD1000E1BCB /* Utilities.swift */; };
+		4B0EAFFB2D36F1D2000E1BCB /* SignInWithGoogleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0EAFFA2D36F1D1000E1BCB /* SignInWithGoogleHelper.swift */; };
 		4B0F975E2C9231570053005B /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0F975D2C9231570053005B /* HomeService.swift */; };
 		4B0F97602C92317A0053005B /* GenericService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0F975F2C92317A0053005B /* GenericService.swift */; };
 		4B0F97632C92345F0053005B /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0F97622C92345F0053005B /* AlertController.swift */; };
@@ -51,6 +52,7 @@
 		4B0EAFEE2D331720000E1BCB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4B0EAFF52D359D82000E1BCB /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		4B0EAFF72D359FD1000E1BCB /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		4B0EAFFA2D36F1D1000E1BCB /* SignInWithGoogleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithGoogleHelper.swift; sourceTree = "<group>"; };
 		4B0F975D2C9231570053005B /* HomeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		4B0F975F2C92317A0053005B /* GenericService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericService.swift; sourceTree = "<group>"; };
 		4B0F97622C92345F0053005B /* AlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				4BBA27E12CC96B800017F7EF /* AuthenticationManager.swift */,
+				4B0EAFFA2D36F1D1000E1BCB /* SignInWithGoogleHelper.swift */,
 				4BE5A35B2CE632E9003962FB /* Authentication */,
 				4B2F71692C89026500F5F2E2 /* SignInWIthEmail */,
 				4B0F97782C9238710053005B /* SignUpWithEmail */,
@@ -400,6 +403,7 @@
 				4B0F97732C9237000053005B /* HomeVC.swift in Sources */,
 				4B713A362C9465130032DA81 /* RootView.swift in Sources */,
 				4B0F97632C92345F0053005B /* AlertController.swift in Sources */,
+				4B0EAFFB2D36F1D2000E1BCB /* SignInWithGoogleHelper.swift in Sources */,
 				4B2F71212C88C41D00F5F2E2 /* SceneDelegate.swift in Sources */,
 				4B2F716B2C89029800F5F2E2 /* SignInEmailVC.swift in Sources */,
 				4B2F71472C88F82200F5F2E2 /* AuthenticationVC.swift in Sources */,

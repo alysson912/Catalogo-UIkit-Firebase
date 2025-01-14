@@ -8,10 +8,18 @@
 import UIKit
 
 @MainActor
-final class SeetingsViewModel {
+final class SettingsViewModel {
     
     private var authenticationManager = AuthenticationManager()
-        
+    var authProviders: [AuthProviderOption] = []
+    
+    func loadAuthProviders() {
+        if let providers = try? authenticationManager.getProviders() {
+            authProviders = providers
+        }
+    }
+    
+    
     func signOut() throws {
         try authenticationManager.signOut()
     }
@@ -41,7 +49,7 @@ final class SeetingsViewModel {
 
 class SettingsVC: UIViewController {
     private var screen: SettingsScreen?
-    private var viewModel = SeetingsViewModel()
+    private var viewModel = SettingsViewModel()
     
     override func loadView() {
         screen = SettingsScreen()
@@ -50,13 +58,27 @@ class SettingsVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: false)
+        viewModel.loadAuthProviders()
+        showEmailSection()
     }
     
    override func viewDidLoad() {
         super.viewDidLoad()
        screen?.delegade(delegate: self)
     }
-
+    
+    func showEmailSection() {
+   
+        if !viewModel.authProviders.contains(.email) {
+            self.screen?.updateEmailButton.isHidden = true
+            self.screen?.updatePasswordButton.isHidden = true
+            self.screen?.resetPasswordButton.isHidden = true
+        } else {
+            self.screen?.updateEmailButton.isHidden = false
+            self.screen?.updatePasswordButton.isHidden = false
+            self.screen?.resetPasswordButton.isHidden = false
+        }
+    }
 }
 
 extension SettingsVC: SettingsScreenDelegade {

@@ -114,14 +114,18 @@ class SettingsScreen: UIView {
             await delegate?.tappedUpdateEmailButtonAction()
         }
     }
+  
     
     private func addViews(){
         addSubview(viewBackGround)
         viewBackGround.addSubview(titleLabel)
-        viewBackGround.addSubview(logOutButton)
-        viewBackGround.addSubview(resetPasswordButton)
-        viewBackGround.addSubview(updatePasswordButton)
         viewBackGround.addSubview(updateEmailButton)
+        viewBackGround.addSubview(updatePasswordButton)
+        viewBackGround.addSubview(resetPasswordButton)
+        viewBackGround.addSubview(logOutButton)
+        
+       
+  
     }
     
     override init(frame: CGRect) {
