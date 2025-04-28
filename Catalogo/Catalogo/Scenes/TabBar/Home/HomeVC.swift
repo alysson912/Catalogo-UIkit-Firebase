@@ -16,10 +16,10 @@ final class MenuViewModel {
 
  class HomeVC: UIViewController {
     
-    private var screen: HomeScreen?
+    private var screen: HomeView?
     
     override func loadView() {
-        screen = HomeScreen()
+        screen = HomeView()
         view = screen
     }
     

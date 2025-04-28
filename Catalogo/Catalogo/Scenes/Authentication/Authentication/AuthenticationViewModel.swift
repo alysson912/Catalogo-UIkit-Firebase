@@ -17,4 +17,9 @@ final class AuthenticationViewModel {
         let tokens = try await helper.signIn()
         try await authenticationManager.signInWithGoogle(tokens: tokens)
     }
+    
+    func signInAnonymous() async throws {
+  
+        try await authenticationManager.signInAnonnymous()
+    }
 }

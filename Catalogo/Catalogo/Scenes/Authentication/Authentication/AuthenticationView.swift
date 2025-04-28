@@ -12,6 +12,7 @@ import GoogleSignInSwift
 protocol AuthenticationViewProtocol: AnyObject {
     func actionSignInWithEmailButton()
     func actionSignInWithGoogle()
+    func actionSignInWithAnonymously()
 }
 
 class AuthenticationView: UIView {
@@ -63,9 +64,25 @@ class AuthenticationView: UIView {
         btn.addTarget(self, action: #selector(tappedSignInWithGoogle), for: .touchUpInside)
         return btn
     }()
-    
+        
     @objc private func tappedSignInWithGoogle() {
         delegate?.actionSignInWithGoogle()
+    }
+    
+    lazy var signInWithAnonymouslyButton: UIButton = {
+        let btn = UIButton()
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.isEnabled = true
+        btn.backgroundColor = .backGround
+        btn.setTitle("Sign in with Anonymously", for: .normal)
+        btn.clipsToBounds = true
+        btn.layer.cornerRadius = 8
+        btn.addTarget(self, action: #selector(tappedSignInWithAnonymouslyButton), for: .touchUpInside)
+        return btn
+    }()
+    
+    @objc private func tappedSignInWithAnonymouslyButton() {
+        delegate?.actionSignInWithAnonymously()
     }
     
     private func addViews() {
@@ -73,6 +90,7 @@ class AuthenticationView: UIView {
         viewBackGround.addSubview(titleLabel)
         viewBackGround.addSubview(signInWithEmailButton)
         viewBackGround.addSubview(signInWithGoogleButton)
+        viewBackGround.addSubview(signInWithAnonymouslyButton)
     }
     
     override init(frame: CGRect) {
@@ -101,7 +119,12 @@ class AuthenticationView: UIView {
             signInWithGoogleButton.topAnchor.constraint(equalTo: signInWithEmailButton.bottomAnchor, constant: 10),
             signInWithGoogleButton.leadingAnchor.constraint(equalTo: signInWithEmailButton.leadingAnchor),
             signInWithGoogleButton.trailingAnchor.constraint(equalTo: signInWithEmailButton.trailingAnchor),
-            signInWithGoogleButton.heightAnchor.constraint(equalToConstant: 55)
+            signInWithGoogleButton.heightAnchor.constraint(equalToConstant: 55),
+            
+            signInWithAnonymouslyButton.topAnchor.constraint(equalTo: signInWithGoogleButton.bottomAnchor, constant: 10),
+            signInWithAnonymouslyButton.leadingAnchor.constraint(equalTo: signInWithGoogleButton.leadingAnchor),
+            signInWithAnonymouslyButton.trailingAnchor.constraint(equalTo: signInWithGoogleButton.trailingAnchor),
+            signInWithAnonymouslyButton.heightAnchor.constraint(equalToConstant: 55)
         ])
     }
 }

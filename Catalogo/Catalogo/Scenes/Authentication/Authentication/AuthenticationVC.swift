@@ -38,10 +38,29 @@ class AuthenticationVC: UIViewController, AuthenticationVCProtocol {
         
     }
     
-
+    
 }
 
 extension AuthenticationVC: AuthenticationViewProtocol {
+    func actionSignInWithAnonymously() {
+        Task {
+            do {
+                try await viewModel.signInAnonymous()
+                
+                let vc = MainTabBarController()
+                navigationController?.pushViewController(vc, animated: true)
+                
+//                let mainTabBarController = MainTabBarController()
+//                mainTabBarController.modalPresentationStyle = .fullScreen
+//                present(mainTabBarController, animated: true, completion: nil)
+                
+            } catch {
+                print(error)
+            }
+            
+        }
+    }
+    
     func actionSignInWithGoogle() {
         Task {
             do {
@@ -60,7 +79,7 @@ extension AuthenticationVC: AuthenticationViewProtocol {
     func actionSignInWithEmailButton() {
         let vc = SignInEmailVC()
         navigationController?.pushViewController(vc, animated: true)
-       
+        
     }
 }
 

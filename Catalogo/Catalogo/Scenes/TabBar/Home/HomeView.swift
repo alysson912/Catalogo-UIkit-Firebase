@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeScreen: UIView {
+class HomeView: UIView {
     
     lazy var viewBackGround: UIView = {
         let view = UIView()
